@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">HelperRealm5e</string>
+    <string-array name="classe_dropdown">
+        <item>Atirador</item>
+        <item>Barbaro</item>
+        <item>Bardo</item>
+        <item>Bruxo</item>
+        <item>Clérigo</item>
+        <item>Druida</item>
+        <item>Guerreiro</item>
+        <item>Ladino</item>
+        <item>Mago</item>
+        <item>Paladino</item>
+    </string-array>
+
+</resources>
