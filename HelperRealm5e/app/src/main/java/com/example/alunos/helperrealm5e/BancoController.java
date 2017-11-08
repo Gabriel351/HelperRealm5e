@@ -44,7 +44,7 @@ public class BancoController {
 
     public Cursor carregaDados() {
         Cursor cursor;
-        String[] campos = {banco.NOME, banco.CLASSE, banco.RACA, banco.LEVEL};
+        String[] campos = {banco.ID, banco.NOME, banco.CLASSE, banco.RACA, banco.LEVEL};
         db = banco.getReadableDatabase();
         cursor = db.query(banco.TABELA, campos, null, null, null, null, null, null);
 
@@ -53,5 +53,11 @@ public class BancoController {
         }
         db.close();
         return cursor;
+    }
+
+    public void apagaRegistro (int id) {
+        String where = CriaBanco.ID + "=" + id;
+        db = banco.getReadableDatabase();
+        db.delete(CriaBanco.TABELA, where, null);
     }
 }

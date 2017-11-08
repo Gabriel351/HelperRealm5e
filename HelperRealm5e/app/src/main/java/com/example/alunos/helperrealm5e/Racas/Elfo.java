@@ -4,5 +4,6 @@ public class Elfo extends Raca {
 
     public Elfo(){
         this.destreza = 2;
+        this.nome = "Elfo";
     }
 }

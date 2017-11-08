@@ -9,5 +9,6 @@ public class Humano extends Raca {
         this.forca = 1;
         this.inteligencia = 1;
         this.sabedoria = 1;
+        this.nome = "Humano";
     }
 }

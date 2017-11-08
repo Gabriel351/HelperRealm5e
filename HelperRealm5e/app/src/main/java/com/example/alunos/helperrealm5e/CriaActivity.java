@@ -17,13 +17,13 @@ import java.util.List;
 
 public class CriaActivity extends AppCompatActivity  {
 
-    Spinner spinner = (Spinner) findViewById(R.id.spinner);
-    Spinner spinner2 = (Spinner) findViewById(R.id.spinner2);
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cria);
+
+        Spinner spinner = (Spinner) findViewById(R.id.spinner);
+        Spinner spinner2 = (Spinner) findViewById(R.id.spinner2);
 
         List<String> list = new ArrayList<String>();
         list.add("Atirador");
@@ -55,6 +55,10 @@ public class CriaActivity extends AppCompatActivity  {
     }
 
     public void criar(View v){
+
+        Spinner spinner = (Spinner) findViewById(R.id.spinner);
+        Spinner spinner2 = (Spinner) findViewById(R.id.spinner2);
+
         TextView nome = (TextView) findViewById(R.id.nome);
         String nomePers = nome.getText().toString();
         TextView forca = (TextView) findViewById(R.id.editForca);
@@ -81,6 +85,7 @@ public class CriaActivity extends AppCompatActivity  {
             race = "Halfling";
         else
             race = "Humano";
+
         if(classe == 0)
             crasse = "Atirador";
         else if(classe == 1)
@@ -101,7 +106,11 @@ public class CriaActivity extends AppCompatActivity  {
             crasse = "Mago";
         else
             crasse = "Paladino";
-        Personagem novo = new Personagem(forcaPers, destPers, constPers, intelPers, sabedPers, carismPers, nomePers, crasse, race);    }
+        Personagem novo = new Personagem(forcaPers, destPers, constPers, intelPers, sabedPers, carismPers, nomePers, crasse, race);
+        BancoController crud = new BancoController(getBaseContext());
+        String resultado = crud.insereDados(novo.forca, novo.destreza, novo.constituicao, novo.inteligencia, novo.sabedoria, novo.carisma, novo.nome, novo.classeNome, novo.racaNome, novo.lvl, novo.vida);
+        Toast.makeText(getApplicationContext(), resultado, Toast.LENGTH_LONG).show();
+    }
 
 
 
