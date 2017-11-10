@@ -36,17 +36,18 @@ public class ListaActivity extends AppCompatActivity {
             public void onItemClick (AdapterView<?> parent, View view, int position, long id) {
                 AlertDialog alerta;
 
-
                 Cursor cursor1;
                 cursor.moveToPosition(position);
                 codigo = cursor.getString(cursor.getColumnIndexOrThrow(CriaBanco.ID));
                 AlertDialog.Builder builder = new AlertDialog.Builder(ListaActivity.this);
                 builder.setTitle("Personagem");
-                builder.setMessage("Você deseja alterar ou editar o personagem?");
+                builder.setMessage("Você deseja selecionar ou editar o personagem?");
 
-                builder.setPositiveButton("Alterar", new DialogInterface.OnClickListener() {
+                builder.setPositiveButton("Selecionar", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface arg0, int arg1) {
-                        crud1.apagaRegistro(Integer.parseInt(codigo));
+                        Intent intent = new Intent(ListaActivity.this, personagemActivity.class);
+                        intent.putExtra("codigo", codigo);
+                        startActivity(intent);
                         finish();
                     }
                 });
@@ -58,9 +59,8 @@ public class ListaActivity extends AppCompatActivity {
                         finish();
                     }
                 });
-
-
-
+                alerta = builder.create();
+                alerta.show();
             }
         });
     }

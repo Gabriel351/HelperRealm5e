@@ -42,15 +42,15 @@ public class Personagem {
 
     public Personagem(int forca, int destreza, int constituicao, int inteligencia, int sabedoria, int carisma, String nome, String crasse, String race){
 
-        if(crasse == "Atirador")
+        if(crasse.equals("Atirador"))
             this.classe = new Atirador();
-        else if(crasse == "Bárbaro")
+        else if(crasse == "Barbaro")
             this.classe = new Barbaro();
         else if(crasse == "Bardo")
             this.classe = new Bardo();
         else if(crasse == "Bruxo")
             this.classe = new Bruxo();
-        else if(crasse == "Clérigo")
+        else if(crasse == "Clerigo")
             this.classe = new Clerigo();
         else if(crasse == "Druida")
             this.classe = new Druida();
@@ -85,63 +85,34 @@ public class Personagem {
         this.lvl = 1;
     }
 
-    public boolean lvlUp(){
-        if(this.lvl != 20) {
-            this.lvl++;
-            if (this.lvl % 2 == 0) {
-                this.constituicao++;
-                this.vida++;
-            }
-            Random rand = new Random();
-            int dado = 0;
-            while (dado == 0)
-                dado = rand.nextInt(classe.getDadoVida());
-            this.vida += dado;
+    public Personagem(String crasse) {
+        if(crasse == "Atirador")
+            this.classe = new Atirador();
+        else if(crasse == "Bárbaro")
+            this.classe = new Barbaro();
+        else if(crasse == "Bardo")
+            this.classe = new Bardo();
+        else if(crasse == "Bruxo")
+            this.classe = new Bruxo();
+        else if(crasse == "Clérigo")
+            this.classe = new Clerigo();
+        else if(crasse == "Druida")
+            this.classe = new Druida();
+        else if(crasse == "Guerreiro")
+            this.classe = new Guerreiro();
+        else if(crasse == "Ladino")
+            this.classe = new Ladino();
+        else if(crasse == "Mago")
+            this.classe = new Mago();
+        else if(crasse == "Paladino")
+            this.classe = new Paladino();
+    }
 
-            int mod = 0;
-            int mod2 = 0;
+    public void setLvl(int lvl) {
+        this.lvl = lvl;
+    }
 
-            if (this.lvl >= 1 && this.lvl <= 4)
-                mod = 2;
-            else if (this.lvl >= 5 && this.lvl <= 8)
-                mod = 3;
-            else if (this.lvl >= 9 && this.lvl <= 12)
-                mod = 4;
-            else if (this.lvl >= 13 && this.lvl <= 16)
-                mod = 5;
-            else if (this.lvl >= 17 && this.lvl <= 20)
-                mod = 6;
-
-            if(classe.getPrimaria2() != "") {
-                mod /= 2;
-                mod2 = mod;
-            }
-            if (classe.getPrimaria() == "Forca")
-                    this.forca += mod;
-            if (classe.getPrimaria2() == "Forca")
-                this.forca += mod2;
-            if (classe.getPrimaria() == "Destreza")
-                this.destreza += mod;
-            if (classe.getPrimaria2() == "Destreza")
-                this.destreza += mod2;
-            if (classe.getPrimaria() == "Constituicao")
-                this.constituicao += mod;
-            if (classe.getPrimaria2() == "Constituicao")
-                this.constituicao += mod2;
-            if (classe.getPrimaria() == "Inteligencia")
-                this.inteligencia += mod;
-            if (classe.getPrimaria2() == "Inteligencia")
-                this.inteligencia += mod2;
-            if (classe.getPrimaria() == "Sabedoria")
-                this.sabedoria += mod;
-            if (classe.getPrimaria2() == "Sabedoria")
-                this.sabedoria += mod2;
-            if (classe.getPrimaria() == "Carisma")
-                this.carisma += mod;
-            if (classe.getPrimaria2() == "Carisma")
-                this.carisma += mod2;
-            return true;
-        }
-        return false;
+    public String getLvl() {
+        return String.valueOf(lvl);
     }
 }

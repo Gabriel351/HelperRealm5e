@@ -2,12 +2,12 @@ package com.example.alunos.helperrealm5e.Racas;
 
 public class Raca {
 
-    protected int forca;
-    protected int destreza;
-    protected int constituicao;
-    protected int inteligencia;
-    protected int sabedoria;
-    protected int carisma;
+    protected int forca = 0;
+    protected int destreza = 0;
+    protected int constituicao = 0;
+    protected int inteligencia = 0;
+    protected int sabedoria = 0;
+    protected int carisma = 0;
     protected String nome;
 
     public void setForca(int forca) {
