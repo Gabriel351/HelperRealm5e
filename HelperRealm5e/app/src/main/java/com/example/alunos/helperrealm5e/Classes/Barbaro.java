@@ -9,7 +9,7 @@ public class Barbaro extends Classe {
 
     public Barbaro(){
         this.dadoVida = 12;
-        this.nome = "Barbaro";
+        this.nome = "Bárbaro";
         this.primaria = "Forca";
         this.primaria2 = "";
     }

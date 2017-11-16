@@ -7,7 +7,7 @@ public class Clerigo extends Classe {
 
     public Clerigo(){
         this.dadoVida = 8;
-        this.nome = "Clerigo";
+        this.nome = "Clérigo";
         this.primaria = "Sabedoria";
         this.primaria2 = "";
     }

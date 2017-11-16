@@ -165,7 +165,8 @@ public class personagemActivity extends AppCompatActivity {
             if(this.lvl != 20) {
                 this.lvl++;
                 if (this.lvl % 2 == 0) {
-                    this.constituicao1++;
+                    if(this.constituicao1 < 20)
+                        this.constituicao1++;
                     this.vida1++;
                 }
                 Random rand = new Random();
@@ -174,48 +175,63 @@ public class personagemActivity extends AppCompatActivity {
                 dado = rand.nextInt(++x);
                 this.vida1 += dado;
 
-                int mod = 0;
-                int mod2 = 0;
+                if (this.lvl % 3 == 0) {
+                    
+                    if(this.forca1 < 20)
+                        this.forca1++;
+                    if(this.destreza1 < 20)
+                        this.destreza1++;
+                    if(this.sabedoria1 < 20)
+                        this.sabedoria1++;
+                    if(this.inteligencia1 < 20)
+                        this.inteligencia1++;
+                    if(this.carisma1 < 20)
+                        this.carisma1++;
+                    
+                    int mod = 0;
+                    int mod2 = 0;
 
-                if (this.lvl >= 1 && this.lvl <= 4)
-                    mod = 2;
-                else if (this.lvl >= 5 && this.lvl <= 8)
-                    mod = 3;
-                else if (this.lvl >= 9 && this.lvl <= 12)
-                    mod = 4;
-                else if (this.lvl >= 13 && this.lvl <= 16)
-                    mod = 5;
-                else if (this.lvl >= 17 && this.lvl <= 20)
-                    mod = 6;
+                    if (this.lvl >= 1 && this.lvl <= 4)
+                        mod = 1;
+                    else if (this.lvl >= 5 && this.lvl <= 8)
+                        mod = 2;
+                    else if (this.lvl >= 9 && this.lvl <= 12)
+                        mod = 3;
+                    else if (this.lvl >= 13 && this.lvl <= 16)
+                        mod = 4;
+                    else if (this.lvl >= 17 && this.lvl <= 20)
+                        mod = 5;
 
-                if(personagem.classe.getPrimaria2() != "") {
-                    mod /= 2;
-                    mod2 = mod;
+                    if (personagem.classe.getPrimaria2() != "") {
+                        mod /= 2;
+                        mod2 = mod;
+                    }
+
+                    if (personagem.classe.getPrimaria().equals("Forca") && this.forca1 < 20)
+                        this.forca1 += mod;
+                    if (personagem.classe.getPrimaria2().equals("Forca") && this.forca1 < 20)
+                        this.forca1 += mod2;
+                    if (personagem.classe.getPrimaria().equals("Destreza") && this.destreza1 < 20)
+                        this.destreza1 += mod;
+                    if (personagem.classe.getPrimaria2().equals("Destreza") && this.destreza1 < 20)
+                        this.destreza1 += mod2;
+                    if (personagem.classe.getPrimaria().equals("Constituicao") && this.constituicao1 < 20)
+                        this.constituicao1 += mod;
+                    if (personagem.classe.getPrimaria2().equals("Constituicao") && this.constituicao1 < 20)
+                        this.constituicao1 += mod2;
+                    if (personagem.classe.getPrimaria().equals("Inteligencia") && this.inteligencia1 < 20)
+                        this.inteligencia1 += mod;
+                    if (personagem.classe.getPrimaria2().equals("Inteligencia") && this.inteligencia1 < 20)
+                        this.inteligencia1 += mod2;
+                    if (personagem.classe.getPrimaria().equals("Sabedoria") && this.sabedoria1 < 20)
+                        this.sabedoria1 += mod;
+                    if (personagem.classe.getPrimaria2().equals("Sabedoria") && this.sabedoria1 < 20)
+                        this.sabedoria1 += mod2;
+                    if (personagem.classe.getPrimaria().equals("Carisma") && this.carisma1 < 20)
+                        this.carisma1 += mod;
+                    if (personagem.classe.getPrimaria2().equals("Carisma") && this.carisma1 < 20)
+                        this.carisma1 += mod2;
                 }
-                if (personagem.classe.getPrimaria() == "Forca")
-                    this.forca1 += mod;
-                if (personagem.classe.getPrimaria2() == "Forca")
-                    this.forca1 += mod2;
-                if (personagem.classe.getPrimaria() == "Destreza")
-                    this.destreza1 += mod;
-                if (personagem.classe.getPrimaria2() == "Destreza")
-                    this.destreza1 += mod2;
-                if (personagem.classe.getPrimaria() == "Constituicao")
-                    this.constituicao1 += mod;
-                if (personagem.classe.getPrimaria2() == "Constituicao")
-                    this.constituicao1 += mod2;
-                if (personagem.classe.getPrimaria() == "Inteligencia")
-                    this.inteligencia1 += mod;
-                if (personagem.classe.getPrimaria2() == "Inteligencia")
-                    this.inteligencia1 += mod2;
-                if (personagem.classe.getPrimaria() == "Sabedoria")
-                    this.sabedoria1 += mod;
-                if (personagem.classe.getPrimaria2() == "Sabedoria")
-                    this.sabedoria1 += mod2;
-                if (personagem.classe.getPrimaria() == "Carisma")
-                    this.carisma1 += mod;
-                if (personagem.classe.getPrimaria2() == "Carisma")
-                    this.carisma1 += mod2;
             }
             this.bd();
             this.atualizar();

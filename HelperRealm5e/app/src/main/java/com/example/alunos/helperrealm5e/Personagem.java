@@ -44,32 +44,32 @@ public class Personagem {
 
         if(crasse.equals("Atirador"))
             this.classe = new Atirador();
-        else if(crasse == "Barbaro")
+        else if(crasse.equals("Bárbaro"))
             this.classe = new Barbaro();
-        else if(crasse == "Bardo")
+        else if(crasse.equals("Bardo"))
             this.classe = new Bardo();
-        else if(crasse == "Bruxo")
+        else if(crasse.equals("Bruxo"))
             this.classe = new Bruxo();
-        else if(crasse == "Clerigo")
+        else if(crasse.equals("Clérigo"))
             this.classe = new Clerigo();
-        else if(crasse == "Druida")
+        else if(crasse.equals("Druida"))
             this.classe = new Druida();
-        else if(crasse == "Guerreiro")
+        else if(crasse.equals("Guerreiro"))
             this.classe = new Guerreiro();
-        else if(crasse == "Ladino")
+        else if(crasse.equals("Ladino"))
             this.classe = new Ladino();
-        else if(crasse == "Mago")
+        else if(crasse.equals("Mago"))
             this.classe = new Mago();
-        else if(crasse == "Paladino")
+        else if(crasse.equals("Paladino"))
             this.classe = new Paladino();
 
-        if(race == "Anão")
+        if(race.equals("Anão"))
             this.raca = new Anao();
-        else if(race == "Elfo")
+        else if(race.equals("Elfo"))
             this.raca = new Elfo();
-        else if(race == "Halfling")
+        else if(race.equals("Halfling"))
             this.raca = new Halfling();
-        else if(race == "Humano")
+        else if(race.equals("Humano"))
             this.raca = new Humano();
 
         this.forca = forca + raca.getForca();
@@ -86,25 +86,25 @@ public class Personagem {
     }
 
     public Personagem(String crasse) {
-        if(crasse == "Atirador")
+        if(crasse.equals("Atirador"))
             this.classe = new Atirador();
-        else if(crasse == "Bárbaro")
+        else if(crasse.equals("Bárbaro"))
             this.classe = new Barbaro();
-        else if(crasse == "Bardo")
+        else if(crasse.equals("Bardo"))
             this.classe = new Bardo();
-        else if(crasse == "Bruxo")
+        else if(crasse.equals("Bruxo"))
             this.classe = new Bruxo();
-        else if(crasse == "Clérigo")
+        else if(crasse.equals("Clérigo"))
             this.classe = new Clerigo();
-        else if(crasse == "Druida")
+        else if(crasse.equals("Druida"))
             this.classe = new Druida();
-        else if(crasse == "Guerreiro")
+        else if(crasse.equals("Guerreiro"))
             this.classe = new Guerreiro();
-        else if(crasse == "Ladino")
+        else if(crasse.equals("Ladino"))
             this.classe = new Ladino();
-        else if(crasse == "Mago")
+        else if(crasse.equals("Mago"))
             this.classe = new Mago();
-        else if(crasse == "Paladino")
+        else if(crasse.equals("Paladino"))
             this.classe = new Paladino();
     }
 
